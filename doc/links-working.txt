@@ -1,0 +1,29 @@
+use this link to report sites that are blocked or unavailable:
+https://forms.gle/EdPJ73N5wDEskvQUA
+Status:
+    Updated 4/24/22, 7:20 pm
+    Ludicrous: checked
+    Fracital: checked
+    Extreme Math: checked
+    Radon Games: checked
+    Google Math: not checked
+    (extreme math has no unblocked links)
+Proxies:    
+    Ludicrous: 
+        https://geothermalmaps.com/
+        https://911911911.info/
+        https://thatguy.club/
+    Fracital:
+        https://zellapps.xyz/
+Games:
+    Radon Games:
+        https://radon-games.zvariant.repl.co/
+        https://vsc.zvariant.repl.co/
+        https://thethirdvariant.zvariant.repl.co/
+        https://aod.zvariant.repl.co/
+        https://wymha.bjbfa.tech/
+    Google Math:
+        https://39a3bc42-caa1-4f6e-b51e-372d066fc5c3.id.repl.co/
+        https://bd9d9785-a90e-4ab0-915b-3c9d20286b5f.id.repl.co/
+        https://8eb365dd-77d6-4905-8ffe-8ee498f322d4.id.repl.co/
+        https://funtimes1234.herokuapp.com/
