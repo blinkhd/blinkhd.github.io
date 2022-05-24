@@ -15,6 +15,10 @@ Proxies:
         https://thatguy.club/
     Fracital:
         https://zellapps.xyz/
+    Holy Unblcker:
+        https://kcps.pw/
+        https://thecollegeboards.org/
+        https://mathszway.com/
 Games:
     Radon Games:
         https://radon-games.zvariant.repl.co/

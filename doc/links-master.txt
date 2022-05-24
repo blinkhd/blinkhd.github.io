@@ -74,6 +74,10 @@ Proxies:
         /https://floppasfacts.me/
         /https://zester.wiki/
         /https://starprograms.space/
+    Holy Unblcker:
+        https://kcps.pw/
+        https://thecollegeboards.org/
+        https://mathszway.com/
 Games:
     Extreme Math:
         //https://simply.my-education.ga/ 
