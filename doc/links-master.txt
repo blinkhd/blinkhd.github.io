@@ -111,6 +111,8 @@ Games:
         :https://rgpenguin2005.vega79.repl.co
         https://radon-games.zvariant.repl.co/
         https://vsc.zvariant.repl.co/
+        https://thethirdvariant.zvariant.repl.co/
+        https://aod.zvariant.repl.co/
         https://wymha.bjbfa.tech/
     Google Math:
         //https://googlemath.net/
