@@ -4,12 +4,13 @@ colon in front of a link: temporarily unavailable.
 use this link to report sites that are blocked or unavailable:
 https://forms.gle/EdPJ73N5wDEskvQUA
 Status:
-    Updated 4/24/22, 7:20 pm
+    Updated 7/1/22, 12:30 pm
     Ludicrous: checked
     Fracital: checked
-    Extreme Math: checked
+    Holy Unblcker: checked
+    Komodo: checked
     Radon Games: checked
-    Google Math: not checked
+    Google Math: checked
 Proxies:    
     Ludicrous: 
         private:
@@ -46,6 +47,7 @@ Proxies:
         //https://cattlefood.org/
         //https://conventionalize.org/
         //https://chemistryhelp.org/
+        https://rushschool.net/
     Fracital:
         public:
         /https://zester.wiki/
@@ -78,13 +80,11 @@ Proxies:
         https://kcps.pw/
         https://thecollegeboards.org/
         https://mathszway.com/
+    Komodo: 
+        https://komodo.zvariant.repl.co/
+        https://dragon.zvariant.repl.co/
+        https://kd.zvariant.repl.co
 Games:
-    Extreme Math:
-        //https://simply.my-education.ga/ 
-        /https://simple-education.xyz/
-        /https://bigideasmath.gq/
-        /https://eduschoology.ml/
-        https://review.myessay.live/
     Radon Games:
         public:
         /https://radon.games/

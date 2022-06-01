@@ -1,25 +1,29 @@
 use this link to report sites that are blocked or unavailable:
 https://forms.gle/EdPJ73N5wDEskvQUA
 Status:
-    Updated 4/24/22, 7:20 pm
+    Updated 7/1/22, 12:30 pm
     Ludicrous: checked
     Fracital: checked
     Holy Unblcker: checked
-    Extreme Math: checked
+    Komodo: checked
     Radon Games: checked
-    Google Math: not checked
-    (extreme math has no unblocked links)
+    Google Math: checked
 Proxies:    
     Ludicrous: 
         https://geothermalmaps.com/
         https://911911911.info/
         https://thatguy.club/
+        https://rushschool.net/
     Fracital:
         https://zellapps.xyz/
     Holy Unblcker:
         https://kcps.pw/
         https://thecollegeboards.org/
         https://mathszway.com/
+    Komodo: 
+        https://komodo.zvariant.repl.co/
+        https://dragon.zvariant.repl.co/
+        https://kd.zvariant.repl.co
 Games:
     Radon Games:
         https://radon-games.zvariant.repl.co/
