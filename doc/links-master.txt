@@ -22,6 +22,7 @@ Proxies:
         https://911911911.info/
         https://thatguy.club/
         /https://schoolhub.space/
+        https://shopschool.org/
         public:
         //https://classroomgoogle.xyz/
         //https://floppasmath.xyz/
@@ -80,6 +81,8 @@ Proxies:
         https://kcps.pw/
         https://thecollegeboards.org/
         https://mathszway.com/
+        https://cuegvzg.org/
+        https://889aintf.xyz/
     Komodo: 
         https://komodo.zvariant.repl.co/
         https://dragon.zvariant.repl.co/
