@@ -2,12 +2,13 @@
 <head>
 <style>
 body {
-    white-space: pre-wrap; font-family: 'Courier New', monospace
+    white-space: pre-wrap;
 }
 </style>
 </head>
 <body>
-    use this link to report sites that are blocked or unavailable:
+<textarea id="mytextarea" rows="6" cols="75">
+use this link to report sites that are blocked or unavailable:
 https://forms.gle/EdPJ73N5wDEskvQUA
 Status:
     Updated 7/1/22, 12:30 pm
@@ -48,6 +49,27 @@ Games:
         https://bd9d9785-a90e-4ab0-915b-3c9d20286b5f.id.repl.co/
         https://8eb365dd-77d6-4905-8ffe-8ee498f322d4.id.repl.co/
         https://funtimes1234.herokuapp.com/
+</textarea>
+
+<br/>
+<button onclick="toggle(this)">Hide textarea</button>
+  
+<script>
+let toggle = button => {
+    let element = document.getElementById("mytextarea");
+    let hidden = element.getAttribute("hidden");
+
+    if (hidden) {
+        element.removeAttribute("hidden");
+        button.innerText = "Hide textarea";
+    } else {
+        element.setAttribute("hidden", "hidden");
+        button.innerText = "Show textarea";
+    }
+}
+</script>
+
+<br>
 (this doc is being updated frequently with more cool stuff and methods.)
 The documents below contain multiple links to web proxies and game sites. The first link contains every known link for each site, even the ones that are blocked. The second link contains only the ones that aren't blocked. 
 If you don't know already, a web proxy is a website that allows you to view and use blocked sites.
