@@ -7,7 +7,7 @@ body {
 </style>
 </head>
 <body>
-<div id="working links">
+<div id="workinglinks">
 use this link to report sites that are blocked or unavailable:
 https://forms.gle/EdPJ73N5wDEskvQUA
 Status:
@@ -51,17 +51,16 @@ Games:
         https://funtimes1234.herokuapp.com/
 </div>
 <br>
-<button onclick="toggle(this)">Hide textarea</button>
+<button onclick="toggle(this)">Hide text</button>
 <script>
 let toggle = button => {
-    let element = document.getElementById("working links");
+    let element = document.getElementById("workinglinks");
     let hidden = element.style.display;
-
-    if (hidden = "none") {
-        element.style.display = "block";
+    if (document.getElementById("workinglinks").style.display = "none") {
+        document.getElementById("workinglinks").style.display = "block";
         button.innerText = "Hide text";
     } else {
-        element.style.display = "none";
+        document.getElementById("workinglinks").style.display = "none";
         button.innerText = "Show text";
     }
 }
