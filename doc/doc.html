@@ -57,13 +57,13 @@ Games:
 <script>
 let toggle = button => {
     let element = document.getElementById("working links");
-    let hidden = element.getAttribute("display");
+    let hidden = element.style.display;
 
-    if (hidden) {
-        element.setAttribute("display", "block");
+    if (hidden = "none") {
+        element.style.display = "block";
         button.innerText = "Hide text";
     } else {
-        element.setAttribute("display", "none");
+        element.style.display = "none";
         button.innerText = "Show text";
     }
 }
