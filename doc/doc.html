@@ -51,18 +51,10 @@ Games:
         https://funtimes1234.herokuapp.com/
 </div>
 <br>
-<button onclick="toggle(this)">Hide text</button>
+<button onclick="togglefn()">Hide text</button>
 <script>
-let toggle = button => {
-    let element = document.getElementById("workinglinks");
-    let hidden = element.style.display;
-    if (document.getElementById("workinglinks").style.display = "none") {
-        document.getElementById("workinglinks").style.display = "block";
-        button.innerText = "Hide text";
-    } else {
-        document.getElementById("workinglinks").style.display = "none";
-        button.innerText = "Show text";
-    }
+function togglefn() {
+    document.getElementById("workinglinks").style.display = "none"
 }
 </script>
 <br>
