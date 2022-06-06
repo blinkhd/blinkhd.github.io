@@ -7,7 +7,7 @@ body {
 </style>
 </head>
 <body>
-<textarea id="mytextarea">
+<div id="working links">
 use this link to report sites that are blocked or unavailable:
 https://forms.gle/EdPJ73N5wDEskvQUA
 Status:
@@ -49,22 +49,22 @@ Games:
         https://bd9d9785-a90e-4ab0-915b-3c9d20286b5f.id.repl.co/
         https://8eb365dd-77d6-4905-8ffe-8ee498f322d4.id.repl.co/
         https://funtimes1234.herokuapp.com/
-</textarea>
+</div>
 
 <br/>
 <button onclick="toggle(this)">Hide textarea</button>
   
 <script>
 let toggle = button => {
-    let element = document.getElementById("mytextarea");
-    let hidden = element.getAttribute("hidden");
+    let element = document.getElementById("working links");
+    let hidden = element.getAttribute("display");
 
     if (hidden) {
-        element.removeAttribute("hidden");
-        button.innerText = "Hide textarea";
+        element.setAttribute("display", "block");
+        button.innerText = "Hide text";
     } else {
-        element.setAttribute("hidden", "hidden");
-        button.innerText = "Show textarea";
+        element.setAttribute("display", "none");
+        button.innerText = "Show text";
     }
 }
 </script>
