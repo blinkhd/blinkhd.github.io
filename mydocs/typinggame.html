@@ -290,14 +290,14 @@ function finishGame() {
 
   restart_btn.style.display = "block";
 
-  cpm = Math.round(((characterTyped / timeElapsed) * 60));
-  wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
+  cpmV = Math.round(((characterTyped / timeElapsed) * 60));
+  wpmV = Math.round((((characterTyped / 5) / timeElapsed) * 60));
 
-  curr_cpm.textContent = cpm;
-  curr_wpm.textContent = wpm;
+  curr_cpm.textContent = cpmV;
+  curr_wpm.textContent = wpmV;
 
-  cpm.style.display = "block";
-  wpm.style.display = "block";
+  cpmV.style.display = "block";
+  wpmV.style.display = "block";
 }
 
 function startGame() {
