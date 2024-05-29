@@ -12,6 +12,7 @@
 
 <script type="text/javascript">
 (function() {
+document.body.style.margin = "0px"
 let tmbd = "";
 const search = document.body.appendChild(document.createElement('input'))
 search.value = "49013"
@@ -21,9 +22,14 @@ btn.onclick = () => {
   tmbd=search.value
   frame.src = "https://vidsrc.to/embed/movie/"+tmbd
 }
+document.body.appendChild(document.createElement('br'))
 const frame = document.body.appendChild(document.createElement('iframe'))
+frame.style.position = "absolute"
 frame.style.width = "100%"
-frame.style.height = "640px"
+frame.style.height = "100%"
+
+
+
 
 
 
