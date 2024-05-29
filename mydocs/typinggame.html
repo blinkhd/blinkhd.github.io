@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, inital-scale=1.0" />
+<title></title>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+(function() {
+let style = document.createElement('style');
+document.body.appendChild(style);
+document.body.style.backgroundColor='#fe9801'
+document.body.style.color='black'
+document.body.style.textAlign='center'
+
+let cntnr = document.body.appendChild(document.createElement('div'));
+cntnr.id = "container"
+cntnr.style.display='flex'
+cntnr.style.flexDirection='column'
+cntnr.style.alignItems='center'
+
+  let heading = cntnr.appendChild(document.createElement('div'));
+  heading.id = "heading"
+  heading.innerText = "Simple Speed Typing";
+  heading.style.marginBottom='20px'
+  heading.style.fontSize='3rem'
+  heading.style.color='black'
+  
+    let header = cntnr.appendChild(document.createElement('div'));
+    header.id = "header"
+    header.style.display='flex'
+    header.style.alignItems='center'
+    
+      let wpm = header.appendChild(document.createElement('div'));
+      wpm.id = "wpm"
+      wpm.style.backgroundColor='#ccda46'
+      wpm.style.height='60px'
+      wpm.style.width='70px'
+      wpm.style.margin='8px'
+      wpm.style.padding='12px'
+      wpm.style.borderRadius='20%'
+      wpm.style.boxShadow='black 5px 8px 5px'
+      wpm.style.display='none'
+      
+        let header_text = wpm.appendChild(document.createElement('div'));
+        header_text.className = "header_text"
+        header_text.innerText = "WPM";
+
+        let curr_wpm = wpm.appendChild(document.createElement('div'));
+        curr_wpm.id = "curr_wpm";
+        curr_wpm.innerText = "100";
+        curr_wpm.style.fontSize='2.75rem'
+        
+
+      let cpm = header.appendChild(document.createElement('div'));
+      cpm.id = "cpm";
+      cpm.style.backgroundColor='#ccda46'
+      cpm.style.height='60px'
+      cpm.style.width='70px'
+      cpm.style.margin='8px'
+      cpm.style.padding='12px'
+      cpm.style.borderRadius='20%'
+      cpm.style.boxShadow='black 5px 8px 5px'
+      cpm.style.display='none'
+
+        let header_text5 = cpm.appendChild(document.createElement('div'));
+        header_text5.className = "header_text";
+        header_text5.innerText = "CPM";
+
+        let curr_cpm = cpm.appendChild(document.createElement('div'));
+        curr_cpm.id = "curr_cpm";
+        curr_cpm.innerText = "100";
+        curr_cpm.style.fontSize='2.75rem'
+
+      let errors = header.appendChild(document.createElement('div'));
+      errors.id = "errors";
+      errors.style.backgroundColor='#ccda46'
+      errors.style.height='60px'
+      errors.style.width='70px'
+      errors.style.margin='8px'
+      errors.style.padding='12px'
+      errors.style.borderRadius='20%'
+      errors.style.boxShadow='black 5px 8px 5px'
+      
+        let header_text2 = errors.appendChild(document.createElement('div'));
+        header_text2.className = "header_text";
+        header_text2.innerText = "Errors";
+
+        let curr_errors = errors.appendChild(document.createElement('div'));
+        curr_errors.id = "curr_errors";
+        curr_errors.innerText = "0";
+        curr_errors.style.fontSize='2.75rem'
+
+      let timer = header.appendChild(document.createElement('div'));
+      timer.id = "timer";
+      timer.style.backgroundColor='#ccda46'
+      timer.style.height='60px'
+      timer.style.width='70px'
+      timer.style.margin='8px'
+      timer.style.padding='12px'
+      timer.style.borderRadius='20%'
+      timer.style.boxShadow='black 5px 8px 5px'
+
+        let header_text3 = timer.appendChild(document.createElement('div'));
+        header_text3.className = "header_text";
+        header_text3.innerText = "Time";
+
+        let curr_time = timer.appendChild(document.createElement('div'));
+        curr_time.id = "curr_time";
+        curr_time.innerText = "60s";
+        curr_time.style.fontSize='2.75rem'
+
+      let accuracy = header.appendChild(document.createElement('div'));
+      accuracy.id = "accuracy";
+      accuracy.style.backgroundColor='#ccda46'
+      accuracy.style.height='60px'
+      accuracy.style.width='70px'
+      accuracy.style.margin='8px'
+      accuracy.style.padding='12px'
+      accuracy.style.borderRadius='20%'
+      accuracy.style.boxShadow='black 5px 8px 5px'
+      
+        let header_text4 = accuracy.appendChild(document.createElement('div'));
+        header_text4.className = "header_text"
+        header_text4.innerText = "% Accuracy"
+
+        let curr_accuracy = accuracy.appendChild(document.createElement('div'));
+        curr_accuracy.id = "curr_accuracy"
+        curr_accuracy.innerText = "100";
+        curr_accuracy.style.fontSize='2.75rem'
+  
+  let quote = cntnr.appendChild(document.createElement('div'));
+  quote.id = "quote";
+  quote.innerText = "Click on the area below to start the game."
+  quote.style.backgroundColor='#ccda46'
+  quote.style.fontSize='1.5rem'
+  quote.style.margin='10px'
+  quote.style.padding='25px'
+  quote.style.boxShadow='black 5px 8px 5px'
+  
+  let input_area = cntnr.appendChild(document.createElement('textarea'));
+  input_area.id = "input_area";
+  input_area.placeholder = "start typing here...";
+  input_area.oninput=function() {processCurrentText()};
+  input_area.onfocus=function() {startGame()};
+  input_area.style.backgroundColor='#f5f5c6'
+  input_area.style.height='80px'
+  input_area.style.width='40%'
+  input_area.style.fontSize='1.5rem'
+  input_area.style.fontWeight='600'
+  input_area.style.margin='15px'
+  input_area.style.padding='20px'
+  input_area.style.border='0px'
+  input_area.style.boxShadow='black 5px 8px 5px'
+  
+  let restart_btn = cntnr.appendChild(document.createElement('button'));
+  restart_btn.id = "restart_btn";
+  restart_btn.innerText = "Restart"
+  restart_btn.onclick = function() {resetValues()};
+  restart_btn.style.display='none'
+  restart_btn.style.backgroundColor='#326765'
+  restart_btn.style.fontSize='1.5rem'
+  restart_btn.style.padding='10px'
+  restart_btn.style.border='0px'
+  restart_btn.style.boxShadow='black 5px 8px 5px'
+
+  const headers = document.querySelectorAll(".header_text");
+  for (let i = 0; i < headers.length; i++) {
+    headers[i].style.textTransform='uppercase'
+    headers[i].style.fontSize='0.6rem'
+    headers[i].style.fontWeight='600'
+  }
+
+//JS
+let TIME_LIMIT = 60;
+
+let quotes_array = [
+  "Push yourself, because no one else is going to do it for you.",
+  "Failure is the condiment that gives success its flavor.",
+  "Wake up with determination. Go to bed with satisfaction.",
+  "It's going to be hard, but hard does not mean impossible.",
+  "Learning never exhausts the mind.",
+  "The only way to do great work is to love what you do."
+];
+
+let timeLeft = TIME_LIMIT;
+let timeElapsed = 0;
+let total_errors = 0;
+let errorsV = 0;
+let accuracyV = 0;
+let characterTyped = 0;
+let current_quote = "";
+let quoteNo = 0;
+let timerV = null;
+
+function updateQuote() {
+  quote.textContent = null;
+  current_quote = quotes_array[quoteNo];
+
+  current_quote.split('').forEach(char => {
+    const charSpan = document.createElement('span')
+    charSpan.innerText = char
+    quote.appendChild(charSpan)
+  })
+
+  if (quoteNo < quotes_array.length - 1)
+    quoteNo++;
+  else
+    quoteNo = 0;
+}
+
+function processCurrentText() {
+
+  curr_input = input_area.value;
+  curr_input_array = curr_input.split('');
+
+  characterTyped++;
+
+  errorsV = 0;
+
+  quoteSpanArray = quote.querySelectorAll('span');
+  quoteSpanArray.forEach((char, index) => {
+    let typedChar = curr_input_array[index]
+
+    if (typedChar == null) {
+      char.classList.remove('correct_char');
+      char.classList.remove('incorrect_char');
+      char.style.color='black'
+      char.style.textDecoration=''
+
+    } else if (typedChar === char.innerText) {
+      char.classList.add('correct_char');
+      char.classList.remove('incorrect_char');
+      char.style.color='darkgreen'
+      char.style.textDecoration=''
+
+    } else {
+      char.classList.add('incorrect_char');
+      char.classList.remove('correct_char');
+      char.style.color='red'
+      char.style.textDecoration='underline'
+
+      errorsV++;
+    }
+  });
+
+  curr_errors.textContent = total_errors + errorsV;
+
+  let correctCharacters = (characterTyped - (total_errors + errorsV));
+  let accuracyVal = ((correctCharacters / characterTyped) * 100);
+  curr_accuracy.textContent = Math.round(accuracyVal);
+
+  if (curr_input.length == current_quote.length) {
+    updateQuote();
+
+    total_errors += errorsV;
+
+    input_area.value = "";
+  }
+
+}
+
+function updateTimer() {
+  if (timeLeft > 0) {
+    
+    timeLeft--;
+
+    timeElapsed++;
+
+    curr_time.textContent = timeLeft + "s";
+  }
+  else {
+    
+    finishGame();
+  }
+}
+
+function finishGame() {
+  
+  clearInterval(timerV);
+
+  input_area.disabled = true;
+
+  quote.textContent = "Click on restart to start a new game.";
+
+  restart_btn.style.display = "block";
+
+  cpm = Math.round(((characterTyped / timeElapsed) * 60));
+  wpm = Math.round((((characterTyped / 5) / timeElapsed) * 60));
+
+  curr_cpm.textContent = cpm;
+  curr_wpm.textContent = wpm;
+
+  cpm.style.display = "block";
+  wpm.style.display = "block";
+}
+
+function startGame() {
+
+  resetValues();
+  updateQuote();
+
+  clearInterval(timerV);
+  timerV = setInterval(updateTimer, 1000);
+}
+
+function resetValues() {
+  timeLeft = TIME_LIMIT;
+  timeElapsed = 0;
+  errorsV = 0;
+  total_errors = 0;
+  accuracyV = 0;
+  characterTyped = 0; 
+  quoteNo = 0;
+  input_area.disabled = false;
+
+  input_area.value = "";
+  quote.textContent = 'Click on the area below to start the game.';
+  curr_accuracy.textContent = 100;
+  curr_time.textContent = timeLeft + 's';
+  curr_errors.textContent = 0;
+  restart_btn.style.display = "none";
+  cpm.style.display = "none";
+  wpm.style.display = "none";
+}
+
+})();
+</script>
+</body>
+</html>

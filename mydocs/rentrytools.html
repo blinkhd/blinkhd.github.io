@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, inital-scale=1.0" />
+<title></title>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+
+
+
+
+<script type="text/javascript">
+(function() {
+const obj = document.createElement('div');
+document.body.appendChild(obj);
+obj.style.width = '600px';
+//obj.style.height = '500px';
+obj.style.background = 'hsl(0, 0%, 10%)';
+obj.style.borderRadius = '10px';
+obj.style.position = 'absolute';
+obj.style.textAlign = 'center';
+obj.style.color = 'white';
+obj.style.overflow = 'hidden';
+obj.style.top = '50%';
+obj.style.left = '50%';
+obj.style.transform = 'translateX(-50%) translateY(-50%)'
+
+const title = document.createElement('div');
+title.innerText = "input url";
+obj.appendChild(title);
+
+const input = document.createElement('textarea');
+input.style.width = '550px';
+input.innerText = "https://image.tmdb.org/t/p/original/5ya8jTbNZTrCFUx9OwpNBjCivXY.jpg"
+obj.appendChild(input);
+
+obj.appendChild(document.createElement('br'));
+
+const inp1 = obj.appendChild(document.createElement('input'));
+inp1.value = "![image]("
+inp1.style.textAlign = "right";
+inp1.style.width = '100px'
+
+const button = document.createElement('button');
+button.innerText = "enter";
+button.onclick = () => {
+fdiv = inp1.value;
+bdiv = inp2.value
+inval = input.value;
+inval = inval+"\n";
+inval = inval.replaceAll("https", fdiv+"https");
+inval = inval.replaceAll("\n", bdiv+"\n")
+box.innerText = inval
+}
+obj.appendChild(button);
+
+const button2 = document.createElement('button');
+button2.innerText = "no linebreak";
+button2.onclick = () => {
+fdiv = inp1.value;
+bdiv = inp2.value
+inval = input.value;
+inval = inval+"\n";
+inval = inval.replaceAll("https", fdiv+"https");
+inval = inval.replaceAll("\n", bdiv)
+box.innerText = inval
+}
+obj.appendChild(button2);
+
+const inp2 = obj.appendChild(document.createElement('input'));
+inp2.value = ")"
+inp2.style.width = '100px'
+
+const box = document.createElement('div');
+box.id = "box"
+box.style.width = '550px';
+box.style.height = '250px';
+box.style.color = "black"
+box.style.background = 'hsl(0, 100%, 100%)';
+box.style.margin = '0 auto'
+obj.appendChild(box);
+
+const copy = obj.appendChild(document.createElement('button'));
+copy.innerText = "copy text"
+copy.onclick = () => {
+  navigator.clipboard.writeText(box.innerText);
+}
+
+const rentry = obj.appendChild(document.createElement('button'));
+rentry.innerText = "format rentry";
+rentry.onclick = () => {
+  inval = input.value;
+  inval = inval+"\n";
+  const indxs = [0];
+  const kwrds = [];
+  let tick = 0;
+  let raw = inval.replaceAll("https://rentry.co/","");
+  let newval="";
+  for (let i = 0; i < raw.length; i++) {
+    if (raw.substring(i,i+1)==="\n") {
+      indxs.push(i);
+    }
+  }
+  //alert(indxs.toString());
+  for (let i = 0; i < indxs.length-1; i++) {
+    kwrds.push(raw.substring(indxs[i],indxs[i+1]))
+    kwrds[i] = kwrds[i].replace("\n","")
+    newval = newval + "["+kwrds[i]+"](https://rentry.co/" + kwrds[i] + ")\n"
+  }
+  
+  box.innerText=newval;
+}
+
+})();
+</script>
+</body>
+</html>
