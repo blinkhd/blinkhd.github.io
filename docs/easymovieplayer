@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, inital-scale=1.0" />
+<title></title>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+(function() {
+let tmbd = "";
+const search = document.body.appendChild(document.createElement('input'))
+search.value = "49013"
+const btn = document.body.appendChild(document.createElement('button'))
+btn.innerText = "enter tmbd id"
+btn.onclick = () => {
+  tmbd=search.value
+  frame.src = "https://vidsrc.to/embed/movie/"+tmbd
+}
+const frame = document.body.appendChild(document.createElement('iframe'))
+frame.style.width = "100%"
+frame.style.height = "640px"
+
+
+
+})();
+</script>
+</body>
+</html>
