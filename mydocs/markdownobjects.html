@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, inital-scale=1.0" />
+<title></title>
+<style type="text/css">
+
+</style>
+</head>
+<body>
+
+<script type="text/javascript">
+(function() {
+document.body.style.margin = "0px"
+const bg = document.body.appendChild(document.createElement('div'));
+bg.style.position = 'absolute';
+bg.style.justifyContent = 'center';
+bg.style.display = 'flex'
+bg.style.flexDirection = "column"
+bg.style.alignItems = 'center';
+bg.style.overflow = 'hidden';
+bg.style.width = "100%";
+bg.style.height = "100%";
+
+const block1 = bg.appendChild(document.createElement('div'));
+block1.style.textAlign = 'center'
+
+const title = block1.appendChild(document.createTextNode('input row number and column number'));
+
+block1.appendChild(document.createElement('br'));
+
+const nrows = block1.appendChild(document.createElement('input'))
+nrows.placeholder = "number of rows"
+
+const ncols = block1.appendChild(document.createElement('input'))
+ncols.placeholder = "number of columns"
+
+let rown = 0;
+let coln = 0;
+const heads = {};
+const cells = {};
+let nheads = [];
+let ncells = [];
+
+const frame = block1.appendChild(document.createElement('button'));
+frame.innerText = "create frame"
+frame.onclick = () => {
+  
+  block2.style.display = "block"
+  coln = ncols.value;
+  rown = nrows.value;
+  block2.appendChild(document.createElement('br'));
+  block2.appendChild(document.createElement('br'));
+  block2.innerHTML = "";
+  for (var member in cells) delete cells[member];
+  for (var member in heads) delete heads[member];
+  
+  for (let i = 0; i < coln; i++) {
+    heads["hc"+i] = ""
+  }
+  nheads = Object.keys(heads)
+  for (let i = 0; i < nheads.length; i++) {
+    let cell = document.createElement('input');
+    cell.id = nheads[i]
+    cell.placeholder = nheads[i];
+    cell.oninput = () => {
+      heads[nheads[i]] = cell.value;
+    }
+    block2.appendChild(cell);
+    let breakval = coln-1
+    if (nheads[i].substring(2,3)==breakval) {
+      block2.appendChild(document.createElement('br'));
+    }
+  }
+  
+  block2.appendChild(document.createElement('br'));
+  
+  for (let x = 0; x < rown; x++) {
+    for (let i = 0; i < coln; i++) {
+      cells["r"+x+"c"+i] = ""
+    }
+  }
+  ncells = Object.keys(cells)
+  for (let i = 0; i < ncells.length; i++) {
+    let cell = document.createElement('input');
+    cell.id = ncells[i]
+    cell.placeholder = ncells[i];
+    cell.oninput = () => {
+      cells[ncells[i]] = cell.value;
+    }
+    block2.appendChild(cell);
+    let breakval = coln-1
+    if (ncells[i].substring(3,4)==breakval) {
+      block2.appendChild(document.createElement('br'));
+    }
+  }
+}
+
+const tbgen = block1.appendChild(document.createElement('button'));
+tbgen.innerText = "generate table";
+tbgen.onclick = () => {
+  
+  let final = "";
+  
+  for (let i = 0; i < nheads.length; i++) {
+    final = final + heads[nheads[i]]
+    let breakval = coln-1
+    if (nheads[i].substring(2,3)==breakval) {
+      if (coln==1) {
+        final = final + "|\n"
+      } else {
+        final = final + "\n"
+      }
+    } else {
+      final = final + "|"
+    }
+  }
+  
+  for (let i = 0; i < coln; i++) {
+    final = final + "----"
+    if (i == coln-1) {
+      if (coln == 1) {
+        final = final + "|\n"
+      } else {
+        final = final + "\n"
+      }
+    } else {
+      final = final + "|"
+    }
+  }
+  
+  for (let i = 0; i < ncells.length; i++) {
+    final = final + cells[ncells[i]]
+    let breakval = coln-1
+    if (ncells[i].substring(3,4)==breakval) {
+      if (coln==1) {
+        final = final + "|\n"
+      } else {
+        final = final + "\n"
+      }
+    } else {
+      final = final + "|"
+    }
+  }
+  
+  alert("copied to clipboard: \n"+final);
+  navigator.clipboard.writeText(final);
+}
+
+const block2 = bg.appendChild(document.createElement('div'));
+block2.style.textAlign = 'center'
+block2.style.padding = "20px"
+block2.style.borderRadius = '10px';
+block2.style.background = 'hsl(0, 0%, 10%)'
+block2.style.display = "none"
+})();
+</script>
+</body>
+</html>
