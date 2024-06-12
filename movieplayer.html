@@ -1,0 +1,88 @@
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2024 by blinkhd (http://jsbin.com/tacanix/16/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>the movie thing</title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.rawgit.com/jprichardson/string.js/master/dist/string.min.js"></script>
+<script id="jsbin-javascript">
+/* jshint esnext: true */
+$(function(){
+  const movies = {
+    tt0317219:"Cars",
+    tt1216475:"Cars 2",
+    tt0096283:"My Neighbor Totoro",
+    tt0245429:"Spirited Away",
+    tt0076786:"Suspiria"
+  }
+  
+  $("body").css({
+    background:'lightgrey'
+  })
+  
+  $("body").append("<h1>the movie thing</h1>");
+  
+  $("h1").css({
+    textAlign:'center'
+  })
+  
+  $("body").append("<main></main>");
+  
+  $("main").css({
+    height:'94%',
+    background:'white',
+    marginTop:'-15',
+    textAlign:'center'
+  });
+  
+  const titles = Object.values(movies)
+  const ids = Object.keys(movies)
+  
+  $("main").append("<select id='options'></select>")
+  
+  $.each(titles, function (i, title) {
+    $('#options').append($('<option></option>').val(i).html(title));
+  });
+  
+  $("main").append("<input id='search' placeholder='or enter imdb id here'></input>")
+  
+  $("#search").change(function(){
+    loadIframe("frame", ("https://vidsrc.pro/embed/movie/"+this.value))
+  })
+  
+  $("main").append("<br>")
+  
+  $("main").append("<iframe id='frame'></iframe>");
+  
+  $("#frame").css({
+    width:'97%',
+    height:'95%'
+  })
+  
+  function loadIframe(iframeName, url) {
+    var $iframe = $('#' + iframeName);
+    if ($iframe.length) {
+        $iframe.attr('src',url);
+        return false;
+    }
+    return true;
+  }
+  
+  $("#options").change(function(){
+    loadIframe("frame", ("https://vidsrc.pro/embed/movie/"+ids[$("#options").prop('selectedIndex')]))
+  })
+});
+</script>
+</body>
+</html>
